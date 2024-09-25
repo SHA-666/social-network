@@ -1,13 +1,19 @@
 package controllers
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
-func Welcome(w http.ResponseWriter, r *http.Request) {
+
+func SignIn(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST"{
+		fmt.Println("t un fdp")
+	}
+	fmt.Println(r)
+
 }
 
-func SignIn(http.ResponseWriter, *http.Request) {
-	
-}
-
-func Register(http.ResponseWriter, *http.Request) {
+func Register(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(r)
 }

@@ -1,6 +1,9 @@
 package backend
 
-import "net/http"
+import (
+	"log"
+	"net/http"
+)
 
 func Run() {
 	serveur := &http.Server{
@@ -8,6 +11,7 @@ func Run() {
 		Handler: Routes(),
 	}
 
-	http.ListenAndServe(serveur.Addr, serveur.Handler)
-}
+	log.Println("http://localhost:8080")
 
+	log.Fatal(http.ListenAndServe(serveur.Addr, serveur.Handler))
+}
